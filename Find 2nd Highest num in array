@@ -1,0 +1,19 @@
+using System;
+
+class Program{
+  static void Main(){
+    int[] num = {10,30,20,50,25,40};
+    int first = int.MinValue;
+    int second = int.MinValue;
+    foreach(int n in num){
+      if(n>first){
+        second = first;
+        first = n;
+      }
+      else if(n>second && n!= first){
+        second = n;
+      }
+    }
+    Console.WriteLine(Convert.ToInt32(second));
+  }
+}
