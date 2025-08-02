@@ -1,0 +1,18 @@
+using System;
+
+class Program{
+  static void Main(){
+    Console.WriteLine("Enter a word");
+    string input = Console.ReadLine();
+    input = input.Replace(" ","").ToLower();
+    char[] nchar = input.ToCharArray();
+    Array.Reverse(nchar);
+    string result = new string(nchar);
+    if(input == result){
+      Console.WriteLine("It's a Palindrome");
+    }
+    else{
+      Console.WriteLine("It's not a Palindrome");
+    }
+  }
+}
