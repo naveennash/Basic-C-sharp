@@ -1,0 +1,27 @@
+using System;
+
+class Program{
+  static void Main(){
+    int[] numarr = {1,2,3,5,2,1,2,8,6,7,7,8};
+    int[] resarr = new int[numarr.Length];
+    int count = 0;
+    for(int i = 0; i<numarr.Length;i++)
+    {
+      bool isduplicate = false;
+      for(int j = 0;j<count;j++){
+        if(numarr[i] == resarr[j]){
+          isduplicate = true;
+          break;
+        }
+      }
+      if(!isduplicate)
+      {
+        resarr[count] = numarr[i];
+        count++;
+      }
+    }
+    for(int i = 0;i<count;i++){
+      Console.WriteLine(resarr[i]);
+    }
+  }
+}
