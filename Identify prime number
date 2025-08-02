@@ -1,0 +1,26 @@
+using System;
+
+class Programm{
+  static void Main(){
+    Console.WriteLine("Enter a number: ");
+    int input = int.Parse(Console.ReadLine());
+    if(!prime(input)){
+      Console.WriteLine("It is a prime number");
+    }
+    else{
+      Console.WriteLine("It is not a prime number");
+    }
+  }
+  static bool prime(int n){
+    if(n <= 1)
+    {
+      return false;
+    }
+    for(int i = 2;i<=Math.Sqrt(n);i++){
+      if(n%i == 0){
+        return false;
+      }
+    }
+    return true;
+  }
+}
