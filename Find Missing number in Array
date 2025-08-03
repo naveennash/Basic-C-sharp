@@ -1,0 +1,19 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program{
+  static void Main(){
+    int[] arr = {1,2,3,4,5,7};
+    int num1=0;
+    int sumarr=0;
+    int result = 0;
+    sumarr = (arr.Length+1) * (arr.Length +1+1)/2;
+    foreach(int i in arr)
+    {
+      num1+=i;
+    }
+    result = sumarr-num1;
+    Console.WriteLine(result);
+  }
+}
