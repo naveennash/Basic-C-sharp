@@ -1,0 +1,21 @@
+using System;
+using System.Linq;
+
+class Program{
+  static void Main(){
+    Console.WriteLine("Enter a string:");
+    string inputa = (Console.ReadLine()).ToLower();
+    Console.WriteLine("Enter another string:");
+    string inputb = (Console.ReadLine()).ToLower();
+    bool result = inputa.Length == inputb.Length &&
+                  inputa.OrderBy(c=>c).SequenceEqual(inputb.OrderBy(c=>c));
+    if(result)
+    {
+      Console.WriteLine("It's a Anagram");
+    }
+    else
+    {
+      Console.WriteLine("It's not a Anagram");
+    }
+  }
+}
