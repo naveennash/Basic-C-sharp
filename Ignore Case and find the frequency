@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+class Program{
+  static void Main(){
+    Console.WriteLine("Enter a string");
+    string input = Console.ReadLine().ToLower();
+    Dictionary<char,int> frequency = new Dictionary<char,int>();
+    foreach(char c in input){
+      if(char.IsLetter(c))
+      {
+        if(frequency.ContainsKey(c))
+        {
+          frequency[c]++;  
+        }
+        else{
+          frequency[c] =1;
+        }
+      }
+    }
+    foreach(var pair in frequency)
+    {
+      Console.WriteLine($"{pair.Key}:{pair.Value}"); 
+    }
+  }
+}
