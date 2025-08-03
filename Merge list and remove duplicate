@@ -1,0 +1,33 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program{
+  static void Main(){
+    int[] arr = {2,3,4,5};
+    int[] narr = {1,2,8,9};
+    
+    List<int> mylist = new List<int>();
+    Dictionary<int,bool> seen = new Dictionary<int,bool>();
+    foreach(int i in arr)
+    {
+      if(!seen.ContainsKey(i))
+      {
+        mylist.Add(i);
+        seen[i] = true;
+      }
+    }
+    foreach(int i in narr)
+    {
+      if(!seen.ContainsKey(i))
+      {
+        mylist.Add(i);
+        seen[i] = true;
+      }
+    }
+    foreach(int i in mylist)
+    {
+      Console.WriteLine(i);
+    }
+  }
+}
