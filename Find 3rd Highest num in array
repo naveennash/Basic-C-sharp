@@ -1,0 +1,33 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program{
+  static void Main(){
+    int[] arr = {2,3,4,5,2,3};
+    int first = 0;
+    int second = 0;
+    int third = 0;
+    foreach(int i in arr)
+    {
+      if(arr[i] > first)
+      {
+        third = second;
+        second = first;
+        first = arr[i];
+      }
+      else if(arr[i]>second && arr[i]!=first)
+      {
+        third = second;
+        second = arr[i];
+      }
+      else if(arr[i]>third && arr[i]!=first && arr[i]!=second)
+      {
+        third = arr[i];
+      }
+    }
+    Console.WriteLine(first);
+    Console.WriteLine(second);
+    Console.WriteLine(third);
+  }
+}
