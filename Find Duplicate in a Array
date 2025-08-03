@@ -1,0 +1,28 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program{
+  static void Main(){
+    int[] arr = {2,3,4,5,2,3};
+    Dictionary<int,int> frequency = new Dictionary<int,int>();
+    foreach(int i in arr)
+    {
+      if(frequency.ContainsKey(i))
+      {
+        frequency[i]++;
+      }
+      else
+      {
+        frequency[i]=1;
+      }
+    }
+    foreach(var pair in frequency)
+    {
+      if(pair.Value > 1)
+      {
+        Console.WriteLine(pair.Key);
+      }
+    }
+  }
+}
