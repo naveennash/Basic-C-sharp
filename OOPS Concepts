@@ -1,0 +1,88 @@
+Encapsulation - Hiding internal details(data inside a class) and showing only what's necessary 
+
+public class BankAccount{
+  private double balance = 0;
+  public void deposit(double amount){
+    balance += amount;
+  }
+  public double getbalance(){
+    return balance;
+  }
+}
+
+public class Program{
+  static void Main(){
+    BankAccount acc = new BankAccount();
+    acc.deposit(1000);
+    Console.WriteLine(acc.getbalance());
+  }
+}
+
+Inheritence - Reusing properties and menthods from other class
+
+public class User{
+  public string Name{get; set;}
+  public void Write(){
+    Console.WriteLine("In Writescope");
+  }
+}
+
+public class Developer:User{
+  public void WriteCode(){
+    Console.WriteLine("In WriteCodescope");
+  }
+}
+
+public class Program{
+  static void Main(){
+    Developer dev = new Developer();
+    dev.Name = "Naveen";
+    dev.WriteCode();
+    dev.Write();
+  }
+}
+
+Polymorphism - Same method different behaviour depending upon the object
+
+public class User{
+  public virtual void Write(){
+    Console.WriteLine("In Writescope");
+  }
+}
+public class Developer:User{
+  public override void Write(){
+    Console.WriteLine("In Writescope - DEVELOPER");
+  }
+}
+public class Tester:User{
+  public override void Write(){
+    Console.WriteLine("In Writescope - TESTER");
+  }
+}
+
+public class Program{
+  static void Main(){
+    User us = new Developer();
+    User us1 = new Tester();
+    us.Write();
+    us1.Write();
+  }
+}
+
+Abstraction - Hiding complexity and showing only necessary fields
+
+public abstract class Vehicle{
+  public abstract void start();
+}
+
+public class Car:Vehicle{
+  public override void start(){
+    Console.WriteLine("Car started");
+}
+
+public class Program{
+  static void Main(){
+    Vehicle v = new Car();
+    v.start();
+  }
+}
