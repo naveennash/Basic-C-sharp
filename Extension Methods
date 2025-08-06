@@ -1,0 +1,35 @@
+String Extension
+using System;
+
+public static class StringExtension{
+    public static int WordCount(this string str)
+    {
+        return str.Split(new[] {''},StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}
+
+public class Program{
+    public static void Main(){
+        string sentence = "My name is naveen";
+        int count = sentence.WordCount();
+        Console.WriteLine("The WordCount is "+count);
+    }
+}
+
+int Extension
+using System;
+
+public static class IntExtension{
+    public static int square(this int num){
+        return num*num;
+    }
+}
+
+public class Program{
+    static void Main(){
+        int num = 10;
+        int sqnum = num.square();
+        Console.WriteLine("The Square number of"+num+" is "+sqnum);
+    }
+}
+
