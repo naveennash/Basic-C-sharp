@@ -1,0 +1,41 @@
+Abstract class - It is a Half defined parent class in which, some of the implementations are left for the child class to be defined.
+
+using System;
+
+public abstract class Vehicle{
+    public abstract void drive();
+}
+
+public class Car:Vehicle{
+    public override void drive(){
+        Console.WriteLine("Let's Drive");
+    }
+}
+
+public class Program{
+    public static void Main(){
+        Vehicle vec = new Car();
+        vec.drive();
+    }
+}
+
+Interface - It is the contract between developer who is developing a code and the consumer who is consuming the code.Logic cannot be defined in interface and always holds the access modifier public
+
+using System;
+
+public interface Vehicle{
+    void drive();
+}
+
+public class Car:Vehicle{
+    public void drive(){
+        Console.WriteLine("Let's drive Interface");
+    }
+}
+
+public class Program{
+    static void Main(){
+        Vehicle vec = new Car();
+        vec.drive();
+    }
+}
