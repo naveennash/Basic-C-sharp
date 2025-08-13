@@ -4,7 +4,7 @@ class Programm{
   static void Main(){
     Console.WriteLine("Enter a number: ");
     int input = int.Parse(Console.ReadLine());
-    if(!prime(input)){
+    if(prime(input)){
       Console.WriteLine("It is a prime number");
     }
     else{
