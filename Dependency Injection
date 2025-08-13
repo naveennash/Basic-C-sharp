@@ -2,7 +2,7 @@ public interface ISalaryservice{
   double GetSalary();
 }
 
-public class Salaryservice{
+public class Salaryservice:ISalaryservice{
   public double GetSalary(){
     return 100000;
   }
