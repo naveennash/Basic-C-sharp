@@ -1,0 +1,19 @@
+public interface ISalaryservice{
+  double GetSalary();
+}
+
+public class Salaryservice{
+  public double GetSalary(){
+    return 100000;
+  }
+}
+
+public class Employee{
+  private readonly ISalaryservice _salaryservice;
+  public Employee(ISalaryservice salaryservice){
+    _salaryservice = salaryservice;
+  }
+  public double GetSalary(){
+    return _salaryservice.GetSalary();
+  }
+}
